@@ -5,7 +5,7 @@ import path from "path";
 export default function Gallery() {
   // Read photos from public directory at runtime on server
   const photosDir = path.join(process.cwd(), "public", "photos");
-  let photos = [];
+  let photos: string[] = [];
   try {
     const files = fs.readdirSync(photosDir)
       .filter(f => f.toLowerCase().endsWith('.jpg') || f.toLowerCase().endsWith('.jpeg'))
